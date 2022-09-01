@@ -1,10 +1,11 @@
 package vehicle
 
-//entry "booking_system/src/entry"
-//exit "booking_system/src/exit"
+import (
+	"ticket"
+)
 
 type Vehicle struct {
-	No string `json:"vehicle_no"`
-	//Entry entry.Entry
-	//Exit exit.Exit
+	Vehicle_number string `json:"vehicle_no"`
+	Type           int    `json:"type"`
+	Ticket         *ticket.Ticket
 }
