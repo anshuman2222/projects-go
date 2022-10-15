@@ -1,0 +1,28 @@
+Commands in test.sh:
+./mycd / abc
+./mycd /abc/def ghi
+./mycd /abc/def ..
+./mycd /abc/def /abc
+./mycd /abc/def /abc/klm
+./mycd /abc/def ../..
+./mycd /abc/def ../../..
+./mycd /abc/def .
+./mycd /abc/def ..klm
+./mycd /abc/def //////
+./mycd /abc/def ......
+
+
+=========================================
+
+(venv) anshuman.singh main % ./test.sh
+/abc
+/abc/def/ghi
+/abc
+/abc
+/abc/klm
+/
+/
+/abc/def
+mycd:  ..klm: No such file or directory
+/
+mycd:  ......: No such file or directory
