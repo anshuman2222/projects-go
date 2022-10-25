@@ -9,4 +9,5 @@
 ./mycd /abc/def ..klm
 ./mycd /abc/def //////
 ./mycd /abc/def ......
-
+./mycd /abc/def ../gh///../klm/.
+./mycd /a/b/c /b/c/.././././../lolo999

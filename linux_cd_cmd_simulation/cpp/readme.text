@@ -1,0 +1,8 @@
+Compile code and create binary:
+========================
+g++ -o mycd mycd.cpp;
+
+Run:
+============
+./mycd /abcd efd
+

@@ -77,8 +77,8 @@ func prepare_new_dir(cwd_dir_path_list, new_dir_path_list []string) string {
 			// If target has only backslash "/"
 			return new_dir
 		}
-		new_dir = strings.Join(new_dir_path_list, "/")
-		return new_dir
+		cwd_dir_path_list = nil
+		cwd_dir_path_list = append(cwd_dir_path_list, "/")
 	}
 
 	for i := 0; i < len(new_dir_path_list); i++ {
@@ -98,6 +98,11 @@ func prepare_new_dir(cwd_dir_path_list, new_dir_path_list []string) string {
 		return new_dir
 	} else {
 		new_dir = strings.Join(cwd_dir_path_list, "/")
+		if (len(new_dir) > 1) &&
+			strings.Compare(string(new_dir[0]), "/") == 0 &&
+			strings.Compare(string(new_dir[1]), "/") == 0 {
+			new_dir = new_dir[1:]
+		}
 		return new_dir
 	}
 }
