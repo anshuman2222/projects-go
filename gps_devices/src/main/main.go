@@ -181,6 +181,7 @@ func get_customer_devices_handler(w http.ResponseWriter, r *http.Request) {
 		// Sent all devices of customer to client
 		w.Header().Set("Content-Type", "application/json")
 
+                log.Printf("Customer: %s holds devices: %v", customer_id, lib.Customers[customer_id])
 		w.Write(res_in_bytes)
 	}
 }
